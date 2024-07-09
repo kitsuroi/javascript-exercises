@@ -1,17 +1,13 @@
-const sumAll = function(num1, num2) {
-  let sum = 0;
-  if (num1 < 0 || num2 < 0){
-    return "ERROR";
-  } else if (typeof num1 != 'number' || typeof num2 != 'number') {
-    return "ERROR";
-  } else if (num1 > num2) {
-    let a = num1;
-    num1 = num2;
-    num2 = a;
+const sumAll = function(min, max) {
+  if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR";
+  if (min < 0 || max < 0) return "ERROR";
+  if (min > max) {
+    [min, max] = [max, min];
   }
-  while (num1 <= num2){
-    sum += num1;
-    num1++;
+  
+  let sum = 0;
+  for (let i = min; i <= max; i++){
+    sum += i;
   }
   return sum;
 };
