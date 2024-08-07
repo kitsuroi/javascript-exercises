@@ -18,9 +18,13 @@ const power = function(a, b) {
 	return a ** b;
 };
 
-const factorial = function(num) {
-	if (num === 0) return 1;
-    return num * factorial(num - 1);
+const factorial = function(n) {
+	if (n === 0) return 1;
+  let product = 1;
+  for (let i = n; i > 0; i--){
+    product *= i;
+  };
+  return product;
 };
 
 // Do not edit below this line
